@@ -73,4 +73,31 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.addItem(dish);
         });
     });
+
+    // Load dishes from dish.js
+    displayDishes(dishesData);
+
+    function displayDishes(dishes) {
+        const menuElement = document.querySelector('.restaurant_menu');
+        dishes.forEach(dishData => {
+            const dish = new Dish(dishData.name, dishData.price);
+            const dishElement = document.createElement('div');
+            dishElement.classList.add('dish');
+            dishElement.innerHTML = `
+                <h4>${dish.name}</h4>
+                <p>Price: $${dish.price.toFixed(2)}</p>
+                <button class="add-to-cart" data-dish-name="${dish.name}" data-dish-price="${dish.price}">+</button>
+            `;
+            menuElement.appendChild(dishElement);
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const dishName = button.dataset.dishName;
+                const dishPrice = parseFloat(button.dataset.dishPrice);
+                const dish = new Dish(dishName, dishPrice);
+                cart.addItem(dish);
+            });
+        });
+    }
 });
