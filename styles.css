@@ -166,20 +166,25 @@
   }
         
   .basket_nav {
-    position: sticky;
-    float: right;
-    width: 300px;
+    position: fixed;
     top: 0;
     right: 0;
-    background-color: #202020;
-    overflow-x: hidden;
-    padding-top: 20px;
+    width: 300px; /* Adjust the width as needed */
+    height: 100%;
+    overflow-y: auto;
+    background-color: #202020; /* Adjust the background color as needed */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Optional: Add a shadow for better visibility */
+    padding: 20px; /* Optional: Add padding for better spacing */
+    z-index: 1000; /* Ensure it is above other elements */
   }
 
   #cart {
     color: #efefef;
   }
-  
+
+  .allContent {
+    margin-right: 320px; /* Adjust the margin to match the cart width + padding */
+  }
 
 /* Footer */
 footer {
