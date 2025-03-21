@@ -75,9 +75,15 @@
     font-size: 96px;
     color: #202020;
   }
+  
   h3 {
     font-size: 40px;
     color: #efefef;
+  }
+
+  h4 {
+    font-size: 32px;
+    color: #202020;
   }
 
   .section2_1 {
