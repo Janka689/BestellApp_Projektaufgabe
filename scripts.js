@@ -37,6 +37,14 @@ class Cart {
         this.items.forEach(item => {
             const itemElement = document.createElement('div');
             itemElement.textContent = `${item.dish.name} x ${item.quantity}`;
+            const addButton = document.createElement('button');
+            addButton.textContent = '+';
+            addButton.addEventListener('click', () => this.addItem(item.dish));
+            const removeButton = document.createElement('button');
+            removeButton.textContent = '🗑️';
+            removeButton.addEventListener('click', () => this.removeItem(item.dish));
+            itemElement.appendChild(addButton);
+            itemElement.appendChild(removeButton);
             cartElement.appendChild(itemElement);
         });
     }
@@ -51,15 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const dishPrice = parseFloat(button.dataset.dishPrice);
             const dish = new Dish(dishName, dishPrice);
             cart.addItem(dish);
-        });
-    });
-
-    document.querySelectorAll('.remove-from-cart').forEach(button => {
-        button.addEventListener('click', () => {
-            const dishName = button.dataset.dishName;
-            const dishPrice = parseFloat(button.dataset.dishPrice);
-            const dish = new Dish(dishName, dishPrice);
-            cart.removeItem(dish);
         });
     });
 });
