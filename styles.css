@@ -1,0 +1,203 @@
+/* Header */
+.header {
+    width:100%;
+    padding-top: 24px;
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: #202020;
+    box-shadow: 0 2px 8px #1c1c1c;
+  }
+  
+  .headerContent {
+    width: 1920px;
+    padding: 40px;
+    display: flex;
+  }
+  
+  .img_logo {
+    width: 96px;
+    height: 96px;
+  }
+
+  .headerText {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  input {
+    height: 41px;
+    flex-grow: 1;
+  }
+
+/* Site Content */
+
+  .section2 {
+    background-image: url(./img/big.jpg);
+    background-size: cover;
+    height: 40vh;
+    background-position: center center;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .restaurant_header {
+    width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+  }
+
+  .restaurant_content {
+    width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 96px;
+    color: #202020;
+  }
+  h3 {
+    font-size: 40px;
+    color: #efefef;
+  }
+
+  .section2_1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .restaurant_button {
+    background-color: #ff8000;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .fa-star {
+    color: #ff8000;
+    font-size: 48px;
+  }
+
+  .fa-motorcycle {
+    color: #202020;
+    font-size: 48px;
+  }
+
+  .fa-info-circle {
+    color: #202020;
+    font-size: 48px;
+    cursor: pointer;
+  }
+
+  .text_40 {
+    font-size: 40px;
+    color: #202020;
+  }
+
+  .restaurant_content_left {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .img_section2 {
+    width: 256px;
+    height: 256px;
+    object-fit: contain;
+    background-color: #efefef;
+    border-radius: 16px;
+    display: flex;
+    position: relative; 
+  }
+
+  .section2_2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .restaurant_evaluation {
+    width: 1920px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .basket_content {
+    position: relative;
+    width: 100%;
+  }
+        
+  .basket_nav {
+    position: sticky;
+    float: right;
+    width: 300px;
+    top: 0;
+    right: 0;
+    background-color: #202020;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  #cart {
+    color: #efefef;
+  }
+  
+
+/* Footer */
+footer {
+    background-color: #202020;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .footer-content {
+    width: 1920px;
+    padding: 40px;
+    background-color: #202020;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footerImg {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .img_logo_Fot {
+    width: 96px;
+  }
