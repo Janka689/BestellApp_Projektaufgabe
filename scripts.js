@@ -20,13 +20,21 @@ class Cart {
         this.updateCartDisplay();
     }
 
-    removeItem(dish) {
+    decreaseItem(dish) {
         const itemIndex = this.items.findIndex(item => item.dish.name === dish.name);
         if (itemIndex > -1) {
             this.items[itemIndex].quantity--;
             if (this.items[itemIndex].quantity === 0) {
                 this.items.splice(itemIndex, 1);
             }
+        }
+        this.updateCartDisplay();
+    }
+
+    removeItem(dish) {
+        const itemIndex = this.items.findIndex(item => item.dish.name === dish.name);
+        if (itemIndex > -1) {
+            this.items.splice(itemIndex, 1);
         }
         this.updateCartDisplay();
     }
@@ -40,10 +48,14 @@ class Cart {
             const addButton = document.createElement('button');
             addButton.textContent = '+';
             addButton.addEventListener('click', () => this.addItem(item.dish));
+            const decreaseButton = document.createElement('button');
+            decreaseButton.textContent = '-';
+            decreaseButton.addEventListener('click', () => this.decreaseItem(item.dish));
             const removeButton = document.createElement('button');
             removeButton.textContent = '🗑️';
             removeButton.addEventListener('click', () => this.removeItem(item.dish));
             itemElement.appendChild(addButton);
+            itemElement.appendChild(decreaseButton);
             itemElement.appendChild(removeButton);
             cartElement.appendChild(itemElement);
         });
