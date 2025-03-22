@@ -1,7 +1,8 @@
 class Dish {
-    constructor(name, price) {
+    constructor(name, price, category) {
         this.name = name;
         this.price = price;
+        this.category = category;
     }
 }
 
@@ -78,9 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
     displayDishes(dishesData);
 
     function displayDishes(dishes) {
-        const menuElement = document.querySelector('.restaurant_menu');
+        const categories = {
+            vorspeisen: document.getElementById('vorspeisen'),
+            hauptspeisen: document.getElementById('hauptspeisen'),
+            getraenke: document.getElementById('getraenke'),
+            nachspeisen: document.getElementById('nachspeisen')
+        };
+
         dishes.forEach(dishData => {
-            const dish = new Dish(dishData.name, dishData.price);
+            const dish = new Dish(dishData.name, dishData.price, dishData.category);
             const dishElement = document.createElement('div');
             dishElement.classList.add('dish');
             dishElement.innerHTML = `
@@ -88,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Price: $${dish.price.toFixed(2)}</p>
                 <button class="add-to-cart" data-dish-name="${dish.name}" data-dish-price="${dish.price}">+</button>
             `;
-            menuElement.appendChild(dishElement);
+            categories[dish.category].appendChild(dishElement);
         });
 
         document.querySelectorAll('.add-to-cart').forEach(button => {
