@@ -84,6 +84,8 @@
   h5 {
     font-size: 40px;
     color: #202020;
+    padding-top: 40px;
+    padding-bottom: 32px;
   }
 
   h4 {
@@ -169,13 +171,13 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 300px; /* Adjust the width as needed */
+    width: 300px;
     height: 100%;
     overflow-y: auto;
-    background-color: #202020; /* Adjust the background color as needed */
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Optional: Add a shadow for better visibility */
-    padding: 20px; /* Optional: Add padding for better spacing */
-    z-index: 1000; /* Ensure it is above other elements */
+    background-color: #202020;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    z-index: 1000;
   }
 
   #cart {
@@ -183,7 +185,23 @@
   }
 
   .allContent {
-    margin-right: 320px; /* Adjust the margin to match the cart width + padding */
+    margin-right: 320px;
+    padding-bottom: 256px;
+  }
+
+  .section2_3 {    
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .restaurant_menu {
+    width: 1920px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
 /* Footer */
