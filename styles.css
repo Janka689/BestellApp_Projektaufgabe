@@ -286,6 +286,23 @@
     width: 100px; /* Adjust width as needed */
 }
 
+.order-button {
+    width: 100%;
+    padding: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff8000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.order-button:hover {
+    background-color: #e67300;
+}
+
 /* Footer */
 footer {
     background-color: #202020;

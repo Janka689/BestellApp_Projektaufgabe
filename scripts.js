@@ -77,6 +77,16 @@ class Cart {
             <p><span>Gesamt:</span><span>${this.calculateTotal().toFixed(2)} €</span></p>
         `;
         cartElement.appendChild(summaryElement);
+
+        const orderButton = document.createElement('button');
+        orderButton.textContent = 'Bestellen';
+        orderButton.classList.add('order-button');
+        orderButton.addEventListener('click', () => {
+            alert('Vielen Dank für Ihre Bestellung!');
+            this.items = []; // Clear the cart after ordering
+            this.updateCartDisplay();
+        });
+        cartElement.appendChild(orderButton);
     }
 }
 
