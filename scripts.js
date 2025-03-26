@@ -9,6 +9,7 @@ class Dish {
 class Cart {
     constructor() {
         this.items = [];
+        this.deliveryCost = 4.99; // Fixed delivery cost
     }
 
     addItem(dish) {
@@ -40,26 +41,42 @@ class Cart {
         this.updateCartDisplay();
     }
 
+    calculateTotal() {
+        const itemsTotal = this.items.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
+        return itemsTotal + this.deliveryCost;
+    }
+
     updateCartDisplay() {
         const cartElement = document.getElementById('cart');
         cartElement.innerHTML = '';
+
         this.items.forEach(item => {
             const itemElement = document.createElement('div');
-            itemElement.textContent = `${item.dish.name} x ${item.quantity}`;
-            const addButton = document.createElement('button');
-            addButton.textContent = '+';
-            addButton.addEventListener('click', () => this.addItem(item.dish));
-            const decreaseButton = document.createElement('button');
-            decreaseButton.textContent = '-';
-            decreaseButton.addEventListener('click', () => this.decreaseItem(item.dish));
-            const removeButton = document.createElement('button');
-            removeButton.textContent = '🗑️';
-            removeButton.addEventListener('click', () => this.removeItem(item.dish));
-            itemElement.appendChild(addButton);
-            itemElement.appendChild(decreaseButton);
-            itemElement.appendChild(removeButton);
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <span>${item.dish.name} x ${item.quantity}</span>
+                <div>
+                    <button class="cart-add">+</button>
+                    <button class="cart-decrease">-</button>
+                    <button class="cart-remove">🗑️</button>
+                </div>
+            `;
             cartElement.appendChild(itemElement);
+
+            itemElement.querySelector('.cart-add').addEventListener('click', () => this.addItem(item.dish));
+            itemElement.querySelector('.cart-decrease').addEventListener('click', () => this.decreaseItem(item.dish));
+            itemElement.querySelector('.cart-remove').addEventListener('click', () => this.removeItem(item.dish));
         });
+
+        const summaryElement = document.createElement('div');
+        summaryElement.classList.add('cart-summary');
+        const itemsTotal = this.items.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
+        summaryElement.innerHTML = `
+            <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(2)} €</span></p>
+            <p><span>Lieferkosten:</span><span>${this.deliveryCost.toFixed(2)} €</span></p>
+            <p><span>Gesamt:</span><span>${this.calculateTotal().toFixed(2)} €</span></p>
+        `;
+        cartElement.appendChild(summaryElement);
     }
 }
 
@@ -92,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dishElement.classList.add('dish');
             dishElement.innerHTML = `
                 <h4>${dish.name}</h4>
-                <p>Price: $${dish.price.toFixed(2)}</p>
                 <button class="add-to-cart" data-dish-name="${dish.name}" data-dish-price="${dish.price}">+</button>
+                <p>${dish.price.toFixed(2)} €</p>
             `;
             categories[dish.category].appendChild(dishElement);
         });
