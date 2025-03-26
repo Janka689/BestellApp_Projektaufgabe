@@ -171,8 +171,8 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 420px;
-    height: 100%;
+    width: 480px;
+    height: 88%;
     overflow-y: auto;
     background-color: #202020;
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
