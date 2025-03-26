@@ -42,6 +42,7 @@ class Cart {
     }
 
     calculateTotal() {
+        if (this.items.length === 0) return 0; // Return 0 if the cart is empty
         const itemsTotal = this.items.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
         return itemsTotal + this.deliveryCost;
     }
@@ -73,7 +74,7 @@ class Cart {
         const itemsTotal = this.items.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
         summaryElement.innerHTML = `
             <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(2)} €</span></p>
-            <p><span>Lieferkosten:</span><span>${this.deliveryCost.toFixed(2)} €</span></p>
+            <p><span>Lieferkosten:</span><span>${this.items.length > 0 ? this.deliveryCost.toFixed(2) : '0.00'} €</span></p>
             <p><span>Gesamt:</span><span>${this.calculateTotal().toFixed(2)} €</span></p>
         `;
         cartElement.appendChild(summaryElement);
@@ -82,9 +83,13 @@ class Cart {
         orderButton.textContent = 'Bestellen';
         orderButton.classList.add('order-button');
         orderButton.addEventListener('click', () => {
-            alert('Vielen Dank für Ihre Bestellung!');
-            this.items = []; // Clear the cart after ordering
-            this.updateCartDisplay();
+            if (this.items.length === 0) {
+                alert('Sie haben noch nichts bestellt');
+            } else {
+                alert('Vielen Dank für Ihre Bestellung!');
+                this.items = []; // Clear the cart after ordering
+                this.updateCartDisplay();
+            }
         });
         cartElement.appendChild(orderButton);
     }
