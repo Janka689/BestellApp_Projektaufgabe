@@ -334,3 +334,34 @@ footer {
   .img_logo_Fot {
     width: 96px;
   }
+
+  /* Responsive Design */
+
+  @media screen and (max-width: 2030px) {
+    .restaurant_content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 1920px) {
+    .headerContent {
+      width: 100%;
+    }
+    .restaurant_header {
+      width: 100%;
+    }
+    .restaurant_content {
+      width: 100%;
+    }
+    .restaurant_evaluation {
+      width: 100%;
+    }
+    .restaurant_menu {
+      width: 100%;
+    }
+    .footer-content {
+      width: 100%;
+    }
+  }
