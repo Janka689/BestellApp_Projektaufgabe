@@ -1,408 +1,647 @@
 /* Header */
 .header {
-    width:100%;
-    padding-top: 24px;
-    padding-bottom: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-    background-color: #202020;
-    box-shadow: 0 2px 8px #1c1c1c;
-  }
-  
-  .headerContent {
-    width: 1920px;
-    padding: 40px;
-    display: flex;
-  }
-  
-  .img_logo {
-    width: 96px;
-    height: 96px;
-  }
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  background-color: #202020;
+  box-shadow: 0 2px 8px #1c1c1c;
+}
 
-  .headerText {
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  input {
-    height: 41px;
-    flex-grow: 1;
-  }
+.headerContent {
+  width: 1920px;
+  padding: 40px;
+  display: flex;
+}
+
+.img_logo {
+  width: 96px;
+  height: 96px;
+}
+
+.headerText {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  height: 41px;
+  flex-grow: 1;
+}
 
 /* Site Content */
 
-  .section2 {
-    background-image: url(./img/big.jpg);
-    background-size: cover;
-    height: 40vh;
-    background-position: center center;
-    color: white;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
-  }
+.section2 {
+  background-image: url(./img/big.jpg);
+  background-size: cover;
+  height: 40vh;
+  background-position: center center;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
 
-  .restaurant_header {
-    width: 1500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px;
-  }
+.restaurant_header {
+  width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
 
-  .restaurant_content {
-    width: 1500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px;
-  }
+.restaurant_content {
+  width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
 
-  h2 {
-    font-size: 96px;
-    color: #202020;
-  }
+h2 {
+  font-size: 96px;
+  color: #202020;
+}
 
-  h3 {
-    font-size: 40px;
-    color: #efefef;
-  }
+h3 {
+  font-size: 40px;
+  color: #efefef;
+}
 
-  h5 {
-    font-size: 40px;
-    color: #202020;
-    padding-top: 40px;
-    padding-bottom: 32px;
-  }
+h5 {
+  font-size: 40px;
+  color: #202020;
+  padding-top: 40px;
+  padding-bottom: 32px;
+}
 
-  h4 {
-    font-size: 32px;
-    color: #202020;
-  }
+h4 {
+  font-size: 32px;
+  color: #202020;
+}
 
-  .section2_1 {
-    display: flex;
-    justify-content: center;
-  }
+.section2_1 {
+  display: flex;
+  justify-content: center;
+}
 
-  .restaurant_button {
-    background-color: #ff8000;
-    color: white;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-  }
+.restaurant_button {
+  background-color: #ff8000;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  .fa-star {
-    color: #ff8000;
-    font-size: 48px;
-  }
+.fa-star {
+  color: #ff8000;
+  font-size: 48px;
+}
 
-  .fa-motorcycle {
-    color: #202020;
-    font-size: 48px;
-  }
+.fa-motorcycle {
+  color: #202020;
+  font-size: 48px;
+}
 
-  .fa-info-circle {
-    color: #202020;
-    font-size: 48px;
-    cursor: pointer;
-  }
+.fa-info-circle {
+  color: #202020;
+  font-size: 48px;
+  cursor: pointer;
+}
 
-  .text_40 {
-    font-size: 40px;
-    color: #202020;
-  }
+.text_40 {
+  font-size: 40px;
+  color: #202020;
+}
 
-  .restaurant_content_left {
-    display: flex;
-    justify-content: column;
-    align-items: center;
-    gap: 40px;
-  }
+.restaurant_content_left {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  gap: 40px;
+}
 
-  .img_section2 {
-    width: 256px;
-    height: 256px;
-    object-fit: contain;
-    background-color: #efefef;
-    border-radius: 16px;
-    display: flex;
-    position: relative; 
-  }
+.img_section2 {
+  width: 256px;
+  height: 256px;
+  object-fit: contain;
+  background-color: #efefef;
+  border-radius: 16px;
+  display: flex;
+  position: relative;
+}
 
-  .section2_2 {
-    display: flex;
-    justify-content: center;
-  }
+/* Dim or hide img_section2 when burger menu is active */
+.img_section2.dimmed {
+  opacity: 0.3; /* Dim the image */
+  pointer-events: none; /* Disable interactions */
+}
 
-  .restaurant_evaluation {
-    width: 1500px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+.section2_2 {
+  display: flex;
+  justify-content: center;
+}
 
-  .basket_content {
-    position: relative;
-    width: 100%;
-  }
-        
-  .basket_nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 480px;
-    height: 88%;
-    overflow-y: auto;
-    background-color: #202020;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    padding: 20px;
-    z-index: 1000;
-  }
+.restaurant_evaluation {
+  width: 1500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
-  #cart {
-    color: #efefef;
-    margin-bottom: 20px;
-    font-size: 24px; /* Adjusted font size */
-  }
+.basket_content {
+  position: relative;
+  width: 100%;
+}
 
-  .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-    font-size: 24px; /* Adjusted font size */
-  }
+.basket_nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 480px;
+  height: 88%;
+  overflow-y: auto;
+  background-color: #202020;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
 
-  .cart-item button {
-    font-size: 32px;
-    padding: 8px 16px;
-    background-color: #ff8000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+.basket_nav.hidden {
+  transform: translateX(100%);
+}
 
-  .cart-item button:hover {
-    background-color: #e67300;
-  }
+#cart {
+  color: #efefef;
+  margin-bottom: 20px;
+  font-size: 24px; /* Adjusted font size */
+}
 
-  .cart-summary {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    color: #efefef;
-  }
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 24px; /* Adjusted font size */
+}
 
-  .cart-summary p {
-    font-size: 24px;
-    margin: 8px 0;
-    display: flex;
-    justify-content: space-between;
-  }
+.cart-item button {
+  font-size: 32px;
+  padding: 8px 16px;
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  .allContent {
-    margin-right: 400px;
-    display: block;
-    padding-bottom: 256px;
-  }
+.cart-item button:hover {
+  background-color: #e67300;
+}
 
-  .section2_3 {    
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-  }
+.cart-summary {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  color: #efefef;
+}
 
-  .restaurant_menu {
-    width: 1500px;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+.cart-summary p {
+  font-size: 24px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
 
-  #vorspeisen {
-    color: #202020;
-    padding-right: 40px;
-  }
+.allContent {
+  margin-right: 400px;
+  display: block;
+  padding-bottom: 256px;
+}
 
-  #hauptspeisen {
-    color: #202020;
-    padding-right: 40px;
-  }
+.section2_3 {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
 
-  #getraenke {
-    color: #202020;
-    padding-right: 40px;
-  }
+.restaurant_menu {
+  width: 1500px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
-  #nachspeisen {
-    color: #202020;
-    padding-right: 40px;
-  }
+#vorspeisen {
+  color: #202020;
+  padding-right: 40px;
+}
 
-  .restaurant_evaluation {
-    padding-right: 40px;
-  }
+#hauptspeisen {
+  color: #202020;
+  padding-right: 40px;
+}
+
+#getraenke {
+  color: #202020;
+  padding-right: 40px;
+}
+
+#nachspeisen {
+  color: #202020;
+  padding-right: 40px;
+}
+
+.restaurant_evaluation {
+  padding-right: 40px;
+}
 
 .dish {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
 }
 
 .dish h4 {
-    font-size: 32px;
-    margin: 0;
-    flex-grow: 1;
+  font-size: 32px;
+  margin: 0;
+  flex-grow: 1;
 }
 
 .dish button {
-    font-size: 32px;
-    padding: 8px 16px;
-    background-color: #ff8000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  font-size: 32px;
+  padding: 8px 16px;
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .dish button:hover {
-    background-color: #e67300; /* Optional: Add hover effect */
+  background-color: #e67300; /* Optional: Add hover effect */
 }
 
 .dish p {
-    font-size: 24px;
-    margin: 0;
-    color: #202020;
-    text-align: right;
-    flex-shrink: 0;
-    width: 100px; /* Adjust width as needed */
+  font-size: 24px;
+  margin: 0;
+  color: #202020;
+  text-align: right;
+  flex-shrink: 0;
+  width: 100px; /* Adjust width as needed */
 }
 
 .order-button {
-    width: 100%;
-    padding: 16px;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background-color: #ff8000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background-color: #ff8000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .order-button:hover {
-    background-color: #e67300;
+  background-color: #e67300;
 }
 
 /* Footer */
 footer {
-    background-color: #202020;
-    height: 200px;
+  background-color: #202020;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.footer-content {
+  width: 1920px;
+  padding: 40px;
+  background-color: #202020;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerImg {
+  height: 50px;
+  object-fit: contain;
+}
+
+.img_logo_Fot {
+  width: 96px;
+}
+
+/* Burger menu styles */
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+  font-size: 32px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.burger-menu .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff8000;
+  color: #efefef;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure burger menu is always visible */
+.burger-menu.sticky {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 2030px) {
+  .restaurant_content {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 24px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    flex-direction: column;
+  }
+
+  .img_section2 {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .headerContent {
+    width: 100%;
+  }
+  .restaurant_header {
+    width: 100%;
+  }
+  .restaurant_content {
+    width: 100%;
+  }
+  .restaurant_evaluation {
+    width: 100%;
+  }
+  .restaurant_menu {
     width: 100%;
   }
   .footer-content {
-    width: 1920px;
-    padding: 40px;
-    background-color: #202020;
-    height: 200px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  h2 {
+    font-size: 64px;
+  }
+  .restaurant_evaluation {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 40px;
   }
-  
-  .footerImg {
-    height: 50px;
-    object-fit: contain;
+
+  .basket_nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 88%;
+    background-color: #202020;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    transform: translateX(100%);
   }
-  
-  .img_logo_Fot {
+
+  .basket_nav.visible {
+    transform: translateX(0);
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .allContent {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  h2 {
+    font-size: 48px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 32px;
+  }
+  .restaurant_button {
+    font-size: 20px;
+  }
+  .fa-star {
+    font-size: 32px;
+  }
+  .fa-motorcycle {
+    font-size: 32px;
+  }
+  .fa-info-circle {
+    font-size: 32px;
+  }
+  .text_40 {
+    font-size: 32px;
+  }
+  .restaurant_content_left {
+    gap: 20px;
+  }
+  .img_section2 {
     width: 96px;
+    height: 96px;
+  }
+  .restaurant_evaluation {
+    gap: 20px;
+  }
+  .dish h4 {
+    font-size: 24px;
+  }
+  .dish p {
+    font-size: 20px;
+  }
+  .dish button {
+    font-size: 24px;
+  }
+  .order-button {
+    font-size: 20px;
+  }
+  .cart-item button {
+    font-size: 24px;
+  }
+  .cart-summary p {
+    font-size: 20px;
   }
 
-  /* Responsive Design */
-
-  @media screen and (max-width: 2030px) {
-    .restaurant_content {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .img_section2 {
-      width: 128px;
-      height: 128px;
-    }
+  #vorspeisen {
+    padding-right: 16px;
+  }
+  
+  #hauptspeisen {
+    padding-right: 16px;
+  }
+  
+  #getraenke {
+    padding-right: 16px;
+  }
+  
+  #nachspeisen {
+    padding-right: 16px;
   }
 
-  @media screen and (max-width: 1920px) {
-    .headerContent {
-      width: 100%;
-    }
-    .restaurant_header {
-      width: 100%;
-    }
-    .restaurant_content {
-      width: 100%;
-    }
-    .restaurant_evaluation {
-      width: 100%;
-    }
-    .restaurant_menu {
-      width: 100%;
-    }
-    .footer-content {
-      width: 100%;
-    }
+  .section2_3 {
+    padding: 16px;
   }
 
-  @media screen and (max-width: 1300px) {
-     h2 {
-      font-size: 64px;
-    }
-    .restaurant_evaluation {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding-right: 40px;
-    }
-
-    .basket_nav {
-      width: 300px;
-    }
+  /* Adjust cart item layout for smaller screens */
+  .cart-item {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 8px; /* Add spacing between elements */
   }
+
+  .cart-item span {
+    font-size: 20px; /* Adjust font size for the dish name */
+  }
+
+  .cart-item div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px; /* Add spacing between buttons */
+  }
+
+  .cart-item button {
+    font-size: 20px; /* Adjust button font size */
+    padding: 6px 12px; /* Adjust button padding */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .restaurant_button {
+    font-size: 16px;
+  }
+  .fa-star {
+    font-size: 24px;
+  }
+  .fa-motorcycle {
+    font-size: 24px;
+  }
+  .fa-info-circle {
+    font-size: 24px;
+  }
+  .text_40 {
+    font-size: 24px;
+  }
+  .restaurant_content_left {
+    gap: 16px;
+  }
+  .img_section2 {
+    width: 64px;
+    height: 64px;
+  }
+  .restaurant_evaluation {
+    gap: 16px;
+  }
+  .dish h4 {
+    font-size: 20px;
+  }
+  .dish p {
+    font-size: 16px;
+  }
+  .dish button {
+    font-size: 20px;
+  }
+  .order-button {
+    font-size: 16px;
+  }
+  .cart-item button {
+    font-size: 20px;
+  }
+  .cart-summary p {
+    font-size: 16px;
+  }
+
+  #vorspeisen {
+    padding-right: 8px;
+  }
+  
+  #hauptspeisen {
+    padding-right: 8px;
+  }
+  
+  #getraenke {
+    padding-right: 8px;
+  }
+  
+  #nachspeisen {
+    padding-right: 8px;
+  }
+
+  .section2_3 {
+    padding: 8px;
+  }
+
+  .headerText {
+    font-size: 24px;
+  }
+  
+}

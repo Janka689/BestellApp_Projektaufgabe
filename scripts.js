@@ -22,6 +22,7 @@ class Cart {
       this.items.push({ dish, quantity: 1 });
     }
     this.updateCartDisplay();
+    this.updateCartCount();
   }
 
   decreaseItem(dish) {
@@ -35,6 +36,7 @@ class Cart {
       }
     }
     this.updateCartDisplay();
+    this.updateCartCount();
   }
 
   removeItem(dish) {
@@ -45,6 +47,7 @@ class Cart {
       this.items.splice(itemIndex, 1);
     }
     this.updateCartDisplay();
+    this.updateCartCount();
   }
 
   calculateTotal() {
@@ -113,15 +116,37 @@ class Cart {
         alert("Vielen Dank für Ihre Bestellung!");
         this.items = [];
         this.updateCartDisplay();
+        this.updateCartCount();
       }
     });
     cartElement.appendChild(orderButton);
+  }
+
+  updateCartCount() {
+    const cartCountElement = document.querySelector(".burger-menu .cart-count");
+    const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElement.textContent = totalItems;
   }
 }
 
 const cart = new Cart();
 
 document.addEventListener("DOMContentLoaded", () => {
+  const burgerMenu = document.getElementById("burger-menu");
+  const basketNav = document.getElementById("basket-nav");
+  const imgSection2 = document.querySelector(".img_section2");
+
+  burgerMenu.addEventListener("click", () => {
+    basketNav.classList.toggle("visible");
+    imgSection2.classList.toggle("dimmed"); // Dim or undim the image
+  });
+
+  // Initialize cart count
+  const cartCountElement = document.createElement("div");
+  cartCountElement.classList.add("cart-count");
+  cartCountElement.textContent = "0"; // Start with 0 items
+  burgerMenu.appendChild(cartCountElement);
+
   document.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
       const dishName = button.dataset.dishName;
