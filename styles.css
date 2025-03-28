@@ -178,7 +178,7 @@ h4 {
   top: 0;
   right: 0;
   width: 480px;
-  height: 88%;
+  height: 78vh;
   overflow-y: auto;
   background-color: #202020;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -194,7 +194,7 @@ h4 {
 #cart {
   color: #efefef;
   margin-bottom: 20px;
-  font-size: 24px; /* Adjusted font size */
+  font-size: 24px;
 }
 
 .cart-item {
@@ -203,7 +203,7 @@ h4 {
   align-items: center;
   padding: 8px 0;
   border-bottom: 1px solid #ccc;
-  font-size: 24px; /* Adjusted font size */
+  font-size: 24px;
 }
 
 .cart-item button {
@@ -305,7 +305,7 @@ h4 {
 }
 
 .dish button:hover {
-  background-color: #e67300; /* Optional: Add hover effect */
+  background-color: #e67300;
 }
 
 .dish p {
@@ -314,7 +314,7 @@ h4 {
   color: #202020;
   text-align: right;
   flex-shrink: 0;
-  width: 100px; /* Adjust width as needed */
+  width: 100px;
 }
 
 .order-button {
@@ -552,26 +552,25 @@ footer {
     padding: 16px;
   }
 
-  /* Adjust cart item layout for smaller screens */
   .cart-item {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align items to the left */
-    gap: 8px; /* Add spacing between elements */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .cart-item span {
-    font-size: 20px; /* Adjust font size for the dish name */
+    font-size: 20px;
   }
 
   .cart-item div {
     display: flex;
     justify-content: flex-start;
-    gap: 8px; /* Add spacing between buttons */
+    gap: 8px;
   }
 
   .cart-item button {
-    font-size: 20px; /* Adjust button font size */
-    padding: 6px 12px; /* Adjust button padding */
+    font-size: 20px;
+    padding: 6px 12px;
   }
 }
 
