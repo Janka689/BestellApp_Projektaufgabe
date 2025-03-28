@@ -217,15 +217,15 @@
   }
 
   .cart-summary p {
-    font-size: 24px; /* Adjusted font size */
+    font-size: 24px;
     margin: 8px 0;
     display: flex;
     justify-content: space-between;
   }
 
   .allContent {
-    margin-right: 400px; /* Adjusted margin to match cart width + padding */
-    display: block; /* Reverted alignment */
+    margin-right: 400px;
+    display: block;
     padding-bottom: 256px;
   }
 
@@ -236,7 +236,7 @@
   }
 
   .restaurant_menu {
-    width: 1500px; /* Reverted width */
+    width: 1500px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -247,6 +247,26 @@
 
   #vorspeisen {
     color: #202020;
+    padding-right: 40px;
+  }
+
+  #hauptspeisen {
+    color: #202020;
+    padding-right: 40px;
+  }
+
+  #getraenke {
+    color: #202020;
+    padding-right: 40px;
+  }
+
+  #nachspeisen {
+    color: #202020;
+    padding-right: 40px;
+  }
+
+  .restaurant_evaluation {
+    padding-right: 40px;
   }
 
 .dish {
@@ -254,7 +274,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 0;
-    border-bottom: 1px solid #ccc; /* Optional: Add a separator between dishes */
+    border-bottom: 1px solid #ccc;
 }
 
 .dish h4 {
@@ -343,6 +363,11 @@ footer {
       justify-content: center;
       flex-direction: column;
     }
+
+    .img_section2 {
+      width: 128px;
+      height: 128px;
+    }
   }
 
   @media screen and (max-width: 1920px) {
@@ -363,5 +388,21 @@ footer {
     }
     .footer-content {
       width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+     h2 {
+      font-size: 64px;
+    }
+    .restaurant_evaluation {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-right: 40px;
+    }
+
+    .basket_nav {
+      width: 300px;
     }
   }

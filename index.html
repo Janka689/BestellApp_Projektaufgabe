@@ -1,89 +1,98 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>BestellApp</title>
     <link rel="stylesheet" type="text/css" href="./styles/standard.css" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="icon" href="./Favicon/favicon-16x16.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link type="text/css" href="fonts.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="dish.js" defer></script>
     <script src="scripts.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- ---- Section 1 - Header ---- -->
     <div class="header">
-        <div class="headerContent">
-            <img class="img_logo" src="./Favicon/android-chrome-192x192.png" />
-            <p class="headerText">BestellApp</p>
-        </div>
+      <div class="headerContent">
+        <img class="img_logo" src="./Favicon/android-chrome-192x192.png" />
+        <p class="headerText">BestellApp</p>
+      </div>
     </div>
-    <!-- ---- Section 2 - basket - Content ---- -->     
-    <div class="basket_content" style="position: fixed; top: 0; right: 0;">
-        <div class="basket_nav">
-            <h3>Warenkorb</h3>
-            <div id="cart">
-                <!-- Cart items will be displayed here -->
-            </div>
+    <!-- ---- Section 2 - basket - Content ---- -->
+    <div class="basket_content" style="position: fixed; top: 0; right: 0">
+      <div class="basket_nav">
+        <h3>Warenkorb</h3>
+        <div id="cart">
+          <!-- Cart items will be displayed here -->
         </div>
-    </div> 
+      </div>
+    </div>
     <!-- ---- Section 3 - Site - Content ---- -->
     <div class="allContent">
-        <div class="section2">
-            <div class="restaurant_header">
-                <img class="img_section2" src="./img/sakura_logo.png" />
-                <p class="restaurant"></p>
-            </div>
+      <div class="section2">
+        <div class="restaurant_header">
+          <img class="img_section2" src="./img/sakura_logo.png" />
+          <p class="restaurant"></p>
         </div>
-        <div class="section2_1">
-            <div class="restaurant_content">
-                <div class="restaurant_content_left">
-                    <h2>Sakura Ramen</h2>
-                </div>
-                <div class="restaurant_content_right">
-                    <button class="restaurant_button">Gruppenbestellung</button>
-                    <button class="restaurant_button">Über uns</button>
-                </div>
-            </div>
+      </div>
+      <div class="section2_1">
+        <div class="restaurant_content">
+          <div class="restaurant_content_left">
+            <h2>Sakura Ramen</h2>
+          </div>
+          <div class="restaurant_content_right">
+            <button class="restaurant_button">Gruppenbestellung</button>
+            <button class="restaurant_button">Über uns</button>
+          </div>
         </div>
-        <div class="section2_2">
-            <div class="restaurant_evaluation">
-                <i class="fas fa-star"></i><p class="text_40">4,2 200+ |</p><i class="fas fa-motorcycle"> 4,99€</i><a href="https://janka-zolyomi-reichhelm.developerakademie.net/SAKURA_Ramen/index.html" class="fas fa-info-circle"></a>
-            </div>
+      </div>
+      <div class="section2_2">
+        <div class="restaurant_evaluation">
+          <i class="fas fa-star"></i>
+          <p class="text_40">4,2 200+</p>
+          <i class="fas fa-motorcycle"> 4,99€</i
+          ><a
+            href="https://janka-zolyomi-reichhelm.developerakademie.net/SAKURA_Ramen/index.html"
+            class="fas fa-info-circle"
+          ></a>
         </div>
-        <div class="section2_3">
-            <div class="restaurant_menu">
-                <h5>Vorspeisen</h5>
-                <div id="vorspeisen"></div>
-                <h5>Hauptspeisen</h5>
-                <div id="hauptspeisen"></div>
-                <h5>Getränke</h5>
-                <div id="getraenke"></div>
-                <h5>Nachspeisen</h5>
-                <div id="nachspeisen"></div>
-            </div>
+      </div>
+      <div class="section2_3">
+        <div class="restaurant_menu">
+          <h5>Vorspeisen</h5>
+          <div id="vorspeisen"></div>
+          <h5>Hauptspeisen</h5>
+          <div id="hauptspeisen"></div>
+          <h5>Getränke</h5>
+          <div id="getraenke"></div>
+          <h5>Nachspeisen</h5>
+          <div id="nachspeisen"></div>
         </div>
+      </div>
     </div>
     <!-- ---- Section 4 - footer - Content ---- -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <img class="img_logo_Fot" src="./Logo/Logo.png" />
-            </div>
-            <div class="footer-right">
-                <a href="https://www.facebook.com"
-                    ><img class="footerImg" src="./img/Facebook.png" alt="Facebook"
-                /></a>
-                <a href="https://www.Instagram.com"
-                    ><img class="footerImg" src="./img/ins.png" alt="Instagram"
-                /></a>
-                <a href="https://www.twitter.com"
-                    ><img class="footerImg" src="./img/twitter.png" alt="Twitter"
-                /></a>
-            </div>
+      <div class="footer-content">
+        <div class="footer-left">
+          <img class="img_logo_Fot" src="./Logo/Logo.png" />
         </div>
+        <div class="footer-right">
+          <a href="https://www.facebook.com"
+            ><img class="footerImg" src="./img/Facebook.png" alt="Facebook"
+          /></a>
+          <a href="https://www.Instagram.com"
+            ><img class="footerImg" src="./img/ins.png" alt="Instagram"
+          /></a>
+          <a href="https://www.twitter.com"
+            ><img class="footerImg" src="./img/twitter.png" alt="Twitter"
+          /></a>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
