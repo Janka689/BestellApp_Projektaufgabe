@@ -111,7 +111,7 @@ class Cart {
     orderButton.classList.add("order-button");
     orderButton.addEventListener("click", () => {
       if (this.items.length === 0) {
-         this.showPopup("Sie haben noch nichts bestellt");
+        this.showPopup("Sie haben noch nichts bestellt");
       } else {
         this.showPopup("Vielen Dank für Ihre Bestellung!");
         this.items = [];
@@ -150,13 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   burgerMenu.addEventListener("click", () => {
     basketNav.classList.toggle("visible");
-    imgSection2.classList.toggle("dimmed"); // Dim or undim the image
+    imgSection2.classList.toggle("dimmed");
   });
 
-  // Initialize cart count
   const cartCountElement = document.createElement("div");
   cartCountElement.classList.add("cart-count");
-  cartCountElement.textContent = "0"; // Start with 0 items
+  cartCountElement.textContent = "0";
   burgerMenu.appendChild(cartCountElement);
 
   document.querySelectorAll(".add-to-cart").forEach((button) => {
