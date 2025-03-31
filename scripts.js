@@ -111,9 +111,9 @@ class Cart {
     orderButton.classList.add("order-button");
     orderButton.addEventListener("click", () => {
       if (this.items.length === 0) {
-        alert("Sie haben noch nichts bestellt");
+         this.showPopup("Sie haben noch nichts bestellt");
       } else {
-        alert("Vielen Dank für Ihre Bestellung!");
+        this.showPopup("Vielen Dank für Ihre Bestellung!");
         this.items = [];
         this.updateCartDisplay();
         this.updateCartCount();
@@ -126,6 +126,18 @@ class Cart {
     const cartCountElement = document.querySelector(".burger-menu .cart-count");
     const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
     cartCountElement.textContent = totalItems;
+  }
+
+  showPopup(message) {
+    const popup = document.getElementById("popup");
+    const popupMessage = document.getElementById("popup-message");
+    popupMessage.textContent = message;
+    popup.classList.remove("hidden");
+
+    const popupClose = document.getElementById("popup-close");
+    popupClose.addEventListener("click", () => {
+      popup.classList.add("hidden");
+    });
   }
 }
 
