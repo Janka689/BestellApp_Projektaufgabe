@@ -4,3 +4,102 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
+
+/* Header */
+.header {
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: #efedea;
+    box-shadow: 0 2px 8px #1c1c1c;
+  }
+  
+  .headerContent {
+    width: 1920px;
+    padding: 40px;
+    display: flex;
+  }
+  
+  .img_logo {
+    width: 96px;
+    height: 96px;
+  }
+  
+  .headerText {
+    color: #202020;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  input {
+    height: 41px;
+    flex-grow: 1;
+  }  
+
+#vorspeisen {
+    color: #202020;
+    padding-right: 40px;
+  }
+  
+  #hauptspeisen {
+    color: #202020;
+    padding-right: 40px;
+  }
+  
+  #getraenke {
+    color: #202020;
+    padding-right: 40px;
+  }
+  
+  #nachspeisen {
+    color: #202020;
+    padding-right: 40px;
+  }
+
+  /* Footer */
+footer {
+    background-color: #efedea;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    position: fixed;
+    left: 0;
+    bottom: -200px;
+    width: 100%;
+    transition: bottom 0.03s ease-in-out;
+  }
+  
+  footer.visible {
+    bottom: 0;
+  }
+  
+  .footer-content {
+    width: 1920px;
+    padding: 40px;
+    background-color: #efedea;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footerImg {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .img_logo_Fot {
+    width: 96px;
+    filter: invert(0.87) sepia(0.12) saturate(0) hue-rotate(180deg)
+      brightness(0.85) contrast(1);
+  }

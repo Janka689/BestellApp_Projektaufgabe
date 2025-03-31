@@ -64,46 +64,17 @@ class Cart {
     cartElement.innerHTML = "";
 
     this.items.forEach((item) => {
-      const itemElement = document.createElement("div");
-      itemElement.classList.add("cart-item");
-      itemElement.innerHTML = `
-                <span>${item.dish.name} x ${item.quantity}</span>
-                <div>
-                    <button class="cart-add">+</button>
-                    <button class="cart-decrease">-</button>
-                    <button class="cart-remove">🗑️</button>
-                </div>
-            `;
+      const itemElement = createCartItemTemplate(
+        item,
+        (dish) => this.addItem(dish),
+        (dish) => this.decreaseItem(dish),
+        (dish) => this.removeItem(dish)
+      );
       cartElement.appendChild(itemElement);
-
-      itemElement
-        .querySelector(".cart-add")
-        .addEventListener("click", () => this.addItem(item.dish));
-      itemElement
-        .querySelector(".cart-decrease")
-        .addEventListener("click", () => this.decreaseItem(item.dish));
-      itemElement
-        .querySelector(".cart-remove")
-        .addEventListener("click", () => this.removeItem(item.dish));
     });
 
-    const summaryElement = document.createElement("div");
-    summaryElement.classList.add("cart-summary");
-    const itemsTotal = this.items.reduce(
-      (sum, item) => sum + item.dish.price * item.quantity,
-      0
-    );
-    summaryElement.innerHTML = `
-            <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(
-              2
-            )} €</span></p>
-            <p><span>Lieferkosten:</span><span>${
-              this.items.length > 0 ? this.deliveryCost.toFixed(2) : "0.00"
-            } €</span></p>
-            <p><span>Gesamt:</span><span>${this.calculateTotal().toFixed(
-              2
-            )} €</span></p>
-        `;
+    const itemsTotal = this.items.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
+    const summaryElement = createCartSummaryTemplate(itemsTotal, this.deliveryCost, this.calculateTotal());
     cartElement.appendChild(summaryElement);
 
     const orderButton = document.createElement("button");
@@ -153,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imgrestaurant_all.classList.toggle("dimmed");
   });
 
+ 
   const cartCountElement = document.createElement("div");
   cartCountElement.classList.add("cart-count");
   cartCountElement.textContent = "0";
@@ -179,25 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dishes.forEach((dishData) => {
       const dish = new Dish(dishData.name, dishData.price, dishData.category);
-      const dishElement = document.createElement("div");
-      dishElement.classList.add("dish");
-      dishElement.innerHTML = `
-                <h4>${dish.name}</h4>
-                <button class="add-to-cart" data-dish-name="${
-                  dish.name
-                }" data-dish-price="${dish.price}">+</button>
-                <p>${dish.price.toFixed(2)} €</p>
-            `;
+      const dishElement = createDishTemplate(dish, (dish) => cart.addItem(dish));
       categories[dish.category].appendChild(dishElement);
-    });
-
-    document.querySelectorAll(".add-to-cart").forEach((button) => {
-      button.addEventListener("click", () => {
-        const dishName = button.dataset.dishName;
-        const dishPrice = parseFloat(button.dataset.dishPrice);
-        const dish = new Dish(dishName, dishPrice);
-        cart.addItem(dish);
-      });
     });
   }
 
@@ -208,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
 
-    // Show footer when scrolled near the bottom
     if (scrollPosition + windowHeight >= documentHeight - 50) {
       footer.classList.add("visible");
     } else {
