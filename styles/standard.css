@@ -39,27 +39,27 @@
     gap: 10px;
   }
   
-  input {
+  .input {
     height: 41px;
     flex-grow: 1;
   }  
 
-#vorspeisen {
+  #starters {
     color: #202020;
     padding-right: 40px;
   }
   
-  #hauptspeisen {
+  #mainCourses {
     color: #202020;
     padding-right: 40px;
   }
   
-  #getraenke {
+  #drinks {
     color: #202020;
     padding-right: 40px;
   }
   
-  #nachspeisen {
+  #desserts {
     color: #202020;
     padding-right: 40px;
   }
@@ -106,7 +106,7 @@ footer {
 
   /* Container for contactform */
 .containerForm {
-    display: flex;
+    display: flex; 
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;

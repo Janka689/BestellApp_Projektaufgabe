@@ -18,26 +18,22 @@
     <script src="scripts.js" defer></script>
   </head>
   <body>
-    <!-- ---- Section 1 - Header ---- -->
     <div class="header">
       <div class="headerContent">
         <img class="img_logo" src="./Favicon/android-chrome-192x192.png" />
         <p class="headerText">BestellApp</p>
       </div>
     </div>
-    <!-- ---- Section 2 - basket - Content ---- -->
-    <div class="basket_content" style="position: fixed; top: 0; right: 0">
-      <div class="burger-menu" id="burger-menu">
+    <div class="basket_content">
+      <div id="burger-menu">
         <i class="fas fa-bars"></i>
       </div>
       <div class="basket_nav" id="basket-nav">
         <h3>Warenkorb</h3>
         <div id="cart">
-          <!-- Cart items will be displayed here -->
         </div>
       </div>
     </div>
-    <!-- ---- Section 3 - Site - Content ---- -->
     <div class="allContent">
       <div class="restaurant_all">
         <div class="restaurant_header">
@@ -70,24 +66,22 @@
       <div class="restaurant_all_3">
         <div class="restaurant_menu">
           <h5>Vorspeisen</h5>
-          <div id="vorspeisen"></div>
+          <div id="starters"></div>
           <h5>Hauptspeisen</h5>
-          <div id="hauptspeisen"></div>
+          <div id="mainCourses"></div>
           <h5>Getränke</h5>
-          <div id="getraenke"></div>
+          <div id="drinks"></div>
           <h5>Nachspeisen</h5>
-          <div id="nachspeisen"></div>
+          <div id="desserts"></div>
         </div>
       </div>
     </div>
-    <!-- ---- Popup Container ---- -->
     <div id="popup" class="popup hidden">
       <div class="popup-content">
         <p id="popup-message"></p>
         <button id="popup-close" class="popup-close">Schließen</button>
       </div>
     </div>
-    <!-- ---- Section 4 - footer - Content ---- -->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-left">

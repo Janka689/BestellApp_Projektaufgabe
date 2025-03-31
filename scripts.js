@@ -94,7 +94,7 @@ class Cart {
   }
 
   updateCartCount() {
-    const cartCountElement = document.querySelector(".burger-menu .cart-count");
+    const cartCountElement = document.querySelector("#burger-menu .cart-count");
     const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
     cartCountElement.textContent = totalItems;
   }
@@ -143,10 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayDishes(dishes) {
     const categories = {
-      vorspeisen: document.getElementById("vorspeisen"),
-      hauptspeisen: document.getElementById("hauptspeisen"),
-      getraenke: document.getElementById("getraenke"),
-      nachspeisen: document.getElementById("nachspeisen"),
+      starters: document.getElementById("starters"),
+      mainCourses: document.getElementById("mainCourses"),
+      drinks: document.getElementById("drinks"),
+      desserts: document.getElementById("desserts"),
     };
 
     dishes.forEach((dishData) => {

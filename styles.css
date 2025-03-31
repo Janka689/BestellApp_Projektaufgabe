@@ -85,6 +85,7 @@ h4 {
   color: #202020;
   font-size: 48px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .text_40 {
@@ -95,6 +96,13 @@ h4 {
 .restaurant_content_left {
   display: flex;
   justify-content: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.restaurant_content_right {
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 40px;
 }
@@ -132,6 +140,9 @@ h4 {
 .basket_content {
   position: relative;
   width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 .basket_nav {
@@ -275,8 +286,8 @@ h4 {
   background-color: #e67300;
 }
 
-/* Burger menu styles */
-.burger-menu {
+/* Burger menu */
+#burger-menu {
   display: none;
   position: fixed;
   top: 20px;
@@ -287,7 +298,7 @@ h4 {
   cursor: pointer;
 }
 
-.burger-menu .cart-count {
+#burger-menu .cart-count {
   position: absolute;
   top: -8px;
   right: -8px;
@@ -303,15 +314,14 @@ h4 {
   align-items: center;
 }
 
-/* Ensure burger menu is always visible */
-.burger-menu.sticky {
+#burger-menu.sticky {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1100;
 }
 
-/* Popup styles */
+/* Popup */
 .popup {
   position: fixed;
   top: 0;
@@ -411,7 +421,7 @@ h4 {
     top: 0;
     right: 0;
     width: 100%;
-    height: 88%;
+    height: 100%;
     background-color: #efedea;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -423,12 +433,18 @@ h4 {
     transform: translateX(0);
   }
 
-  .burger-menu {
+  #burger-menu {
     display: block;
   }
 
   .allContent {
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width:624px) {
+  .restaurant_content_right {
+    flex-direction: column;
   }
 }
 
@@ -489,19 +505,19 @@ h4 {
     font-size: 20px;
   }
 
-  #vorspeisen {
+  #starters {
     padding-right: 16px;
   }
 
-  #hauptspeisen {
+  #mainCourses {
     padding-right: 16px;
   }
 
-  #getraenke {
+  #drinks {
     padding-right: 16px;
   }
 
-  #nachspeisen {
+  #desserts {
     padding-right: 16px;
   }
 
@@ -559,12 +575,15 @@ h4 {
   }
   .dish h4 {
     font-size: 20px;
+    float: left;
   }
   .dish p {
     font-size: 16px;
+    float: right;
   }
   .dish button {
     font-size: 20px;
+    float: right;
   }
   .order-button {
     font-size: 16px;
@@ -576,19 +595,19 @@ h4 {
     font-size: 16px;
   }
 
-  #vorspeisen {
+  #starters {
     padding-right: 8px;
   }
 
-  #hauptspeisen {
+  #mainCourses {
     padding-right: 8px;
   }
 
-  #getraenke {
+  #drinks {
     padding-right: 8px;
   }
 
-  #nachspeisen {
+  #desserts {
     padding-right: 8px;
   }
 
