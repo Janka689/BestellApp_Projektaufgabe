@@ -146,11 +146,11 @@ const cart = new Cart();
 document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.getElementById("burger-menu");
   const basketNav = document.getElementById("basket-nav");
-  const imgSection2 = document.querySelector(".img_section2");
+  const imgrestaurant_all = document.querySelector(".img_restaurant_all");
 
   burgerMenu.addEventListener("click", () => {
     basketNav.classList.toggle("visible");
-    imgSection2.classList.toggle("dimmed");
+    imgrestaurant_all.classList.toggle("dimmed");
   });
 
   const cartCountElement = document.createElement("div");
@@ -200,4 +200,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  const footer = document.querySelector("footer");
+
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // Show footer when scrolled near the bottom
+    if (scrollPosition + windowHeight >= documentHeight - 50) {
+      footer.classList.add("visible");
+    } else {
+      footer.classList.remove("visible");
+    }
+  });
 });

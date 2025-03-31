@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   height: fit-content;
-  background-color: #202020;
+  background-color: #efedea;
   box-shadow: 0 2px 8px #1c1c1c;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .headerText {
-  color: #ffffff;
+  color: #202020;
   font-size: 32px;
   font-weight: bold;
   display: flex;
@@ -39,7 +39,7 @@ input {
 
 /* Site Content */
 
-.section2 {
+.restaurant_all {
   background-image: url(./img/big.jpg);
   background-size: cover;
   height: 40vh;
@@ -78,7 +78,7 @@ h2 {
 
 h3 {
   font-size: 40px;
-  color: #efefef;
+  color: #202020;
 }
 
 h5 {
@@ -93,7 +93,7 @@ h4 {
   color: #202020;
 }
 
-.section2_1 {
+.restaurant_all_1 {
   display: flex;
   justify-content: center;
 }
@@ -137,7 +137,7 @@ h4 {
   gap: 40px;
 }
 
-.img_section2 {
+.img_restaurant_all {
   width: 256px;
   height: 256px;
   object-fit: contain;
@@ -147,13 +147,12 @@ h4 {
   position: relative;
 }
 
-/* Dim or hide img_section2 when burger menu is active */
-.img_section2.dimmed {
-  opacity: 0.3; /* Dim the image */
-  pointer-events: none; /* Disable interactions */
+.img_restaurant_all.dimmed {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.section2_2 {
+.restaurant_all_2 {
   display: flex;
   justify-content: center;
 }
@@ -178,9 +177,9 @@ h4 {
   top: 0;
   right: 0;
   width: 480px;
-  height: 78vh;
+  height: 100%;
   overflow-y: auto;
-  background-color: #202020;
+  background-color: #efedea;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   z-index: 1000;
@@ -192,7 +191,7 @@ h4 {
 }
 
 #cart {
-  color: #efefef;
+  color: #202020;
   margin-bottom: 20px;
   font-size: 24px;
 }
@@ -224,7 +223,7 @@ h4 {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #ccc;
-  color: #efefef;
+  color: #202020;
 }
 
 .cart-summary p {
@@ -240,7 +239,7 @@ h4 {
   padding-bottom: 256px;
 }
 
-.section2_3 {
+.restaurant_all_3 {
   display: flex;
   justify-content: center;
   padding: 40px;
@@ -336,7 +335,7 @@ h4 {
 
 /* Footer */
 footer {
-  background-color: #202020;
+  background-color: #efedea;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -344,13 +343,19 @@ footer {
   margin-top: 24px;
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: -200px;
   width: 100%;
+  transition: bottom 0.03s ease-in-out;
 }
+
+footer.visible {
+  bottom: 0;
+}
+
 .footer-content {
   width: 1920px;
   padding: 40px;
-  background-color: #202020;
+  background-color: #efedea;
   height: 200px;
   display: flex;
   justify-content: space-between;
@@ -364,6 +369,8 @@ footer {
 
 .img_logo_Fot {
   width: 96px;
+  filter: invert(0.87) sepia(0.12) saturate(0) hue-rotate(180deg)
+    brightness(0.85) contrast(1);
 }
 
 /* Burger menu styles */
@@ -394,7 +401,6 @@ footer {
   align-items: center;
 }
 
-/* Ensure burger menu is always visible */
 .burger-menu.sticky {
   position: fixed;
   top: 20px;
@@ -409,7 +415,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #efedea;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -459,7 +465,7 @@ footer {
     flex-direction: column;
   }
 
-  .img_section2 {
+  .img_restaurant_all {
     width: 128px;
     height: 128px;
   }
@@ -503,7 +509,7 @@ footer {
     right: 0;
     width: 100%;
     height: 88%;
-    background-color: #202020;
+    background-color: #efedea;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     z-index: 1000;
@@ -554,7 +560,7 @@ footer {
   .restaurant_content_left {
     gap: 20px;
   }
-  .img_section2 {
+  .img_restaurant_all {
     width: 96px;
     height: 96px;
   }
@@ -583,20 +589,20 @@ footer {
   #vorspeisen {
     padding-right: 16px;
   }
-  
+
   #hauptspeisen {
     padding-right: 16px;
   }
-  
+
   #getraenke {
     padding-right: 16px;
   }
-  
+
   #nachspeisen {
     padding-right: 16px;
   }
 
-  .section2_3 {
+  .restaurant_all_3 {
     padding: 16px;
   }
 
@@ -641,7 +647,7 @@ footer {
   .restaurant_content_left {
     gap: 16px;
   }
-  .img_section2 {
+  .img_restaurant_all {
     width: 64px;
     height: 64px;
   }
@@ -670,25 +676,24 @@ footer {
   #vorspeisen {
     padding-right: 8px;
   }
-  
+
   #hauptspeisen {
     padding-right: 8px;
   }
-  
+
   #getraenke {
     padding-right: 8px;
   }
-  
+
   #nachspeisen {
     padding-right: 8px;
   }
 
-  .section2_3 {
+  .restaurant_all_3 {
     padding: 8px;
   }
 
   .headerText {
     font-size: 24px;
   }
-  
 }
