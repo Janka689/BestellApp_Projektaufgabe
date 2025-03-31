@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BestellApp</title>
+    <link rel="stylesheet" type="text/css" href="../styles/standard.css" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="icon" href="../Favicon/favicon-16x16.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link type="text/css" href="../styles/fonts.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="../scripts/form.js" defer></script>
+    <script src="../scripts/dish.js" defer></script>
+    <script src="../scripts/HTML_Templates.js"></script>
+  </head>
+  <body>
+	<!-- Contactformular Style -->
+    <div class="container">
+		<h2>Kontaktiere uns</h2>
+		<form id="contactForm" class="containerForm">
+		  <label for="name">Dein Name:</label>
+		  <input
+			class="contactInput"
+			type="text"
+			id="name"
+			name="name"
+			required
+		  />
+  
+		  <label for="email">Deine E-Mail:</label>
+		  <input
+			class="contactInput"
+			type="email"
+			id="email"
+			name="email"
+			required
+		  />
+  
+		  <label for="message">Deine Nachricht:</label>
+		  <textarea id="message" name="message" rows="4" required></textarea>
+  
+		  <button class="contactButton" type="submit">Absenden</button>
+		  <div class="feedbackMessage" id="feedbackMessage"></div>
+		</form>
+	  </div>
+	      <!-- ---- Section 4 - footer - Content ---- -->
+		  <footer class="footer">
+			<div class="footer-content">
+			  <div class="footer-left">
+				<img class="img_logo_Fot" src="../Logo/Logo.png" />
+			  </div>
+			  <div class="footer-right">
+				<a href="https://www.facebook.com"
+				  ><img class="footerImg" src="../img/Facebook.png" alt="Facebook"
+				/></a>
+				<a href="https://www.Instagram.com"
+				  ><img class="footerImg" src="../img/ins.png" alt="Instagram"
+				/></a>
+				<a href="https://www.twitter.com"
+				  ><img class="footerImg" src="../img/twitter.png" alt="Twitter"
+				/></a>
+			  </div>
+			</div>
+		  </footer>
+		</body>
+	  </html>

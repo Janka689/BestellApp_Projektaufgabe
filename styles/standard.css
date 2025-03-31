@@ -103,3 +103,63 @@ footer {
     filter: invert(0.87) sepia(0.12) saturate(0) hue-rotate(180deg)
       brightness(0.85) contrast(1);
   }
+
+  /* Container für das Formular */
+.containerForm {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .container h2 {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .contactInput,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    height: 100px;
+    resize: vertical;
+    margin-bottom: 30px;
+  }
+  
+  .contactButton {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ff8000;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  
+  .contactButton:hover {
+    background-color: #ff8000;
+    transition-duration:125ms;
+  }
+  
+  .feedbackMessage {
+    text-align: center;
+    color: green;
+    margin-top: 20px;
+  }
