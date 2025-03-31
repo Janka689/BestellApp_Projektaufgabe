@@ -1,4 +1,4 @@
-// Template for a cart item
+
 function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, removeItemCallback) {
     const itemElement = document.createElement("div");
     itemElement.classList.add("cart-item");
@@ -18,7 +18,6 @@ function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, rem
     return itemElement;
   }
   
-  // Template for the cart summary
   function createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
     const summaryElement = document.createElement("div");
     summaryElement.classList.add("cart-summary");
@@ -30,7 +29,6 @@ function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, rem
     return summaryElement;
   }
   
-  // Template for a dish item
   function createDishTemplate(dish, addItemCallback) {
     const dishElement = document.createElement("div");
     dishElement.classList.add("dish");
