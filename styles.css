@@ -179,7 +179,6 @@ h4 {
 }
 
 .cart-item button {
-  font-size: 32px;
   padding: 8px 16px;
   background-color: #ff8000;
   color: white;
@@ -367,6 +366,10 @@ h4 {
 
 .popup-close:hover {
   background-color: #e67300;
+}
+
+.cart-remove {
+  font-size: 12px;
 }
 
  /* Responsive Design */
