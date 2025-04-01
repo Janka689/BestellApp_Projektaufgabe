@@ -34,8 +34,8 @@ function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, rem
     dishElement.classList.add("dish");
     dishElement.innerHTML = `
       <h4>${dish.name}</h4>
-      <button class="add-to-cart" data-dish-name="${dish.name}" data-dish-price="${dish.price}">+</button>
-      <p>${dish.price.toFixed(2)} €</p>
+      <div class="fos"><button class="add-to-cart" data-dish-name="${dish.name}" data-dish-price="${dish.price}">+</button>
+      <span class="price-text">${dish.price.toFixed(2)} €</span></div>
     `;
   
     dishElement.querySelector(".add-to-cart").addEventListener("click", () => addItemCallback(dish));

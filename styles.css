@@ -260,7 +260,7 @@ h4 {
   background-color: #e67300;
 }
 
-.dish p {
+.price-text {
   font-size: 24px;
   margin: 0;
   color: #202020;
@@ -440,11 +440,21 @@ h4 {
   .allContent {
     margin-right: 0;
   }
+
+  .fos {
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width:624px) {
   .restaurant_content_right {
     flex-direction: column;
+  }
+
+  .fos {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -489,7 +499,7 @@ h4 {
   .dish h4 {
     font-size: 24px;
   }
-  .dish p {
+  .price-text {
     font-size: 20px;
   }
   .dish button {
@@ -545,9 +555,18 @@ h4 {
     font-size: 20px;
     padding: 6px 12px;
   }
+
+  .fos {
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  .restaurant_menu {
+    padding-left: 24px;
+    padding-right: 16px;
+  }
   .restaurant_button {
     font-size: 16px;
   }
@@ -577,7 +596,11 @@ h4 {
     font-size: 20px;
     float: left;
   }
-  .dish p {
+  .price-text {
+    font-size: 16px;
+    text-align: center;
+  }
+  .add-to-cart {
     font-size: 16px;
     float: right;
   }
@@ -617,5 +640,14 @@ h4 {
 
   .headerText {
     font-size: 24px;
+  }
+  .fos {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footerImg {
+    height: 32px;
+    object-fit: contain;
   }
 }

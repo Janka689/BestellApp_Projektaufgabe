@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const footer = document.querySelector("footer");
+ /* const footer = document.querySelector("footer");
 
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
@@ -168,5 +168,5 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       footer.classList.remove("visible");
     }
-  });
+  });*/
 });
