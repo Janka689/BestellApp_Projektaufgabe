@@ -155,18 +155,4 @@ document.addEventListener("DOMContentLoaded", () => {
       categories[dish.category].appendChild(dishElement);
     });
   }
-
- /* const footer = document.querySelector("footer");
-
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-
-    if (scrollPosition + windowHeight >= documentHeight - 50) {
-      footer.classList.add("visible");
-    } else {
-      footer.classList.remove("visible");
-    }
-  });*/
 });

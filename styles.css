@@ -289,12 +289,14 @@ h4 {
 #burger-menu {
   display: none;
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   z-index: 1100;
   font-size: 32px;
-  color: #ccc;
-  cursor: pointer;
+  color: #202020;
+  background-color: #ccc;
+  border-radius: 40%;
+  cursor: pointer;  
 }
 
 #burger-menu .cart-count {
