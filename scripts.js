@@ -118,12 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.getElementById("burger-menu");
   const basketNav = document.getElementById("basket-nav");
   const imgrestaurant_all = document.querySelector(".img_restaurant_all");
+  const imgLogoFot = document.querySelector(".img_logo_fot");
 
   burgerMenu.addEventListener("click", () => {
     basketNav.classList.toggle("visible");
     imgrestaurant_all.classList.toggle("dimmed");
+    imgLogoFot.classList.toggle("dimmedFot");
   });
-
  
   const cartCountElement = document.createElement("div");
   cartCountElement.classList.add("cart-count");

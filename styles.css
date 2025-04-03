@@ -194,6 +194,7 @@ h4 {
 .cart-summary {
   margin-top: 20px;
   padding-top: 20px;
+  margin-bottom: 10px;
   border-top: 1px solid #ccc;
   color: #202020;
 }
@@ -296,7 +297,7 @@ h4 {
   color: #202020;
   background-color: #ccc;
   border-radius: 40%;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 #burger-menu .cart-count {
@@ -320,10 +321,6 @@ h4 {
   top: 20px;
   right: 20px;
   z-index: 1100;
-}
-
-.sum {
-  display: block;
 }
 
 /* Popup */
@@ -378,9 +375,18 @@ h4 {
   font-size: 12px;
 }
 
- /* Responsive Design */
+.cart-summary-container {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
 
- @media screen and (max-width: 2030px) {
+/* Responsive Design */
+
+@media screen and (max-width: 2030px) {
   .restaurant_content {
     display: flex;
     justify-content: center;
@@ -456,7 +462,7 @@ h4 {
   }
 }
 
-@media screen and (max-width:624px) {
+@media screen and (max-width: 624px) {
   .restaurant_content_right {
     flex-direction: column;
   }

@@ -1,4 +1,3 @@
-
 function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, removeItemCallback) {
     const itemElement = document.createElement("div");
     itemElement.classList.add("cart-item");
@@ -18,7 +17,7 @@ function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, rem
     return itemElement;
   }
   
-  function createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
+  function createCartSummaryTemplate(itemsTotal, deliveryCost, total, orderCallback) {
     const summaryElement = document.createElement("div");
     summaryElement.classList.add("cart-summary");
     summaryElement.innerHTML = `
@@ -26,7 +25,12 @@ function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, rem
       <p><span>Lieferkosten:</span><span>${deliveryCost.toFixed(2)} €</span></p>
       <p><span>Gesamt:</span><span>${total.toFixed(2)} €</span></p>
     `;
-    return summaryElement;
+
+    const container = document.createElement("div");
+    container.classList.add("cart-summary-container");
+    container.appendChild(summaryElement);
+
+    return container;
   }
   
   function createDishTemplate(dish, addItemCallback) {

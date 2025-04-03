@@ -89,10 +89,15 @@ footer {
     object-fit: contain;
   }
   
-  .img_logo_Fot {
+  .img_logo_fot {
     width: 96px;
     filter: invert(0.87) sepia(0.12) saturate(0) hue-rotate(180deg)
       brightness(0.85) contrast(1);
+  }
+
+  .img_logo_fot.dimmedFot {
+    opacity: 0;
+    pointer-events: none;
   }
 
   /* Container for contactform */
