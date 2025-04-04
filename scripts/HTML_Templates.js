@@ -17,22 +17,6 @@ function createCartItemTemplate(item, addItemCallback, decreaseItemCallback, rem
     return itemElement;
   }
   
-  function createCartSummaryTemplate(itemsTotal, deliveryCost, total, orderCallback) {
-    const summaryElement = document.createElement("div");
-    summaryElement.classList.add("cart-summary");
-    summaryElement.innerHTML = `
-      <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(2)} €</span></p>
-      <p><span>Lieferkosten:</span><span>${deliveryCost.toFixed(2)} €</span></p>
-      <p><span>Gesamt:</span><span>${total.toFixed(2)} €</span></p>
-    `;
-
-    const container = document.createElement("div");
-    container.classList.add("cart-summary-container");
-    container.appendChild(summaryElement);
-
-    return container;
-  }
-  
   function createDishTemplate(dish, addItemCallback) {
     const dishElement = document.createElement("div");
     dishElement.classList.add("dish");

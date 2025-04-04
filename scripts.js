@@ -64,34 +64,50 @@ class Cart {
     cartElement.innerHTML = "";
 
     this.items.forEach((item) => {
-      const itemElement = createCartItemTemplate(
-        item,
-        (dish) => this.addItem(dish),
-        (dish) => this.decreaseItem(dish),
-        (dish) => this.removeItem(dish)
-      );
-      cartElement.appendChild(itemElement);
+        const itemElement = createCartItemTemplate(
+            item,
+            (dish) => this.addItem(dish),
+            (dish) => this.decreaseItem(dish),
+            (dish) => this.removeItem(dish)
+        );
+        cartElement.appendChild(itemElement);
     });
 
     const itemsTotal = this.items.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
-    const summaryElement = createCartSummaryTemplate(itemsTotal, this.deliveryCost, this.calculateTotal());
+    const summaryElement = this.createCartSummaryTemplate(itemsTotal, this.deliveryCost, this.calculateTotal());
     cartElement.appendChild(summaryElement);
+}
+
+createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
+    const summaryElement = document.createElement("div");
+    summaryElement.classList.add("cart-summary");
+    summaryElement.innerHTML = `
+        <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(2)} €</span></p>
+        <p><span>Lieferkosten:</span><span>${deliveryCost.toFixed(2)} €</span></p>
+        <p><span>Gesamt:</span><span>${total.toFixed(2)} €</span></p>
+    `;
+
+    const container = document.createElement("div");
+    container.classList.add("cart-summary-container");
+    container.appendChild(summaryElement);
 
     const orderButton = document.createElement("button");
     orderButton.textContent = "Bestellen";
     orderButton.classList.add("order-button");
     orderButton.addEventListener("click", () => {
-      if (this.items.length === 0) {
-        this.showPopup("Sie haben noch nichts bestellt");
-      } else {
-        this.showPopup("Vielen Dank für Ihre Bestellung!");
-        this.items = [];
-        this.updateCartDisplay();
-        this.updateCartCount();
-      }
+        if (this.items.length === 0) {
+            this.showPopup("Sie haben noch nichts bestellt");
+        } else {
+            this.showPopup("Vielen Dank für Ihre Bestellung!");
+            this.items = [];
+            this.updateCartDisplay();
+            this.updateCartCount();
+        }
     });
-    cartElement.appendChild(orderButton);
-  }
+    container.appendChild(orderButton);
+
+    return container;
+}
 
   updateCartCount() {
     const cartCountElement = document.querySelector("#burger-menu .cart-count");

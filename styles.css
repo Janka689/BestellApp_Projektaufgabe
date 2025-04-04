@@ -33,7 +33,7 @@
 }
 
 h2 {
-  font-size: 96px;
+  font-size: 72px;
   color: #202020;
   padding-bottom: 24px;
 }
@@ -91,6 +91,13 @@ h4 {
 .text_40 {
   font-size: 40px;
   color: #202020;
+  font-weight: bold;
+}
+
+.text_32 {
+  font-size: 32px;
+  color: #202020;
+  font-weight: normal;
 }
 
 .restaurant_content_left {
@@ -145,7 +152,7 @@ h4 {
   right: 0;
 }
 
-.basket_nav {
+#basket-nav {
   position: fixed;
   top: 0;
   right: 0;
@@ -159,8 +166,20 @@ h4 {
   transition: transform 0.3s ease-in-out;
 }
 
-.basket_nav.hidden {
+#basket-nav.hidden {
   transform: translateX(100%);
+}
+
+.basket_text {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -24px;
+  background-color: #efedea;
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 32px;
+  color: #202020;
+  margin-bottom: 20px;
 }
 
 #cart {
@@ -431,7 +450,7 @@ h4 {
     padding-right: 40px;
   }
 
-  .basket_nav {
+  #basket-nav {
     position: fixed;
     top: 0;
     right: 0;
@@ -444,7 +463,7 @@ h4 {
     transform: translateX(100%);
   }
 
-  .basket_nav.visible {
+  #basket-nav.visible {
     transform: translateX(0);
   }
 
