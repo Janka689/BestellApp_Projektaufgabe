@@ -64,26 +64,37 @@ class Cart {
     cartElement.innerHTML = "";
 
     this.items.forEach((item) => {
-        const itemElement = createCartItemTemplate(
-            item,
-            (dish) => this.addItem(dish),
-            (dish) => this.decreaseItem(dish),
-            (dish) => this.removeItem(dish)
-        );
-        cartElement.appendChild(itemElement);
+      const itemElement = createCartItemTemplate(
+        item,
+        (dish) => this.addItem(dish),
+        (dish) => this.decreaseItem(dish),
+        (dish) => this.removeItem(dish)
+      );
+      cartElement.appendChild(itemElement);
     });
 
-    const itemsTotal = this.items.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
-    const summaryElement = this.createCartSummaryTemplate(itemsTotal, this.deliveryCost, this.calculateTotal());
+    const itemsTotal = this.items.reduce(
+      (sum, item) => sum + item.dish.price * item.quantity,
+      0
+    );
+    const summaryElement = this.createCartSummaryTemplate(
+      itemsTotal,
+      this.deliveryCost,
+      this.calculateTotal()
+    );
     cartElement.appendChild(summaryElement);
-}
+  }
 
-createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
+  createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
     const summaryElement = document.createElement("div");
     summaryElement.classList.add("cart-summary");
     summaryElement.innerHTML = `
-        <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(2)} €</span></p>
-        <p><span>Lieferkosten:</span><span>${deliveryCost.toFixed(2)} €</span></p>
+        <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(
+          2
+        )} €</span></p>
+        <p><span>Lieferkosten:</span><span>${deliveryCost.toFixed(
+          2
+        )} €</span></p>
         <p><span>Gesamt:</span><span>${total.toFixed(2)} €</span></p>
     `;
 
@@ -95,19 +106,21 @@ createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
     orderButton.textContent = "Bestellen";
     orderButton.classList.add("order-button");
     orderButton.addEventListener("click", () => {
-        if (this.items.length === 0) {
-            this.showPopup("Sie haben noch nichts bestellt");
-        } else {
-            this.showPopup("Vielen Dank für Ihre Bestellung!");
-            this.items = [];
-            this.updateCartDisplay();
-            this.updateCartCount();
-        }
+      if (this.items.length === 0) {
+        this.showPopup("Sie haben noch nichts bestellt");
+      } else {
+        this.showPopup("Vielen Dank für Ihre Bestellung!");
+        this.items = [];
+        this.updateCartDisplay();
+        this.updateCartCount();
+      }
     });
     container.appendChild(orderButton);
 
     return container;
-}
+  }
+
+  
 
   updateCartCount() {
     const cartCountElement = document.querySelector("#burger-menu .cart-count");
@@ -141,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imgrestaurant_all.classList.toggle("dimmed");
     imgLogoFot.classList.toggle("dimmedFot");
   });
- 
+
   const cartCountElement = document.createElement("div");
   cartCountElement.classList.add("cart-count");
   cartCountElement.textContent = "0";
@@ -168,8 +181,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dishes.forEach((dishData) => {
       const dish = new Dish(dishData.name, dishData.price, dishData.category);
-      const dishElement = createDishTemplate(dish, (dish) => cart.addItem(dish));
+      const dishElement = createDishTemplate(dish, (dish) =>
+        cart.addItem(dish)
+      );
       categories[dish.category].appendChild(dishElement);
     });
   }
 });
+
+function createCartItemTemplate(
+  item,
+  addItemCallback,
+  decreaseItemCallback,
+  removeItemCallback
+) {
+  const itemElement = document.createElement("div");
+  itemElement.classList.add("cart-item");
+  itemElement.innerHTML = `
+      <span>${item.dish.name} x ${item.quantity}</span>
+      <div>
+        <button class="cart-add">+</button>
+        <button class="cart-decrease">-</button>
+        <button class="cart-remove">🗑️</button>
+      </div>
+    `;
+ 
+  itemElement
+    .querySelector(".cart-add")
+    .addEventListener("click", () => addItemCallback(item.dish));
+  itemElement
+    .querySelector(".cart-decrease")
+    .addEventListener("click", () => decreaseItemCallback(item.dish));
+  itemElement
+    .querySelector(".cart-remove")
+    .addEventListener("click", () => removeItemCallback(item.dish));
+
+  return itemElement;
+}
+
+function createDishTemplate(dish, addItemCallback) {
+  const dishElement = document.createElement("div");
+  dishElement.classList.add("dish");
+  dishElement.innerHTML = `
+      <h4>${dish.name}</h4>
+      <div class="fos"><button class="add-to-cart" data-dish-name="${
+        dish.name
+      }" data-dish-price="${dish.price}">+</button>
+      <span class="price-text">${dish.price.toFixed(2)} €</span></div>
+    `;
+
+  dishElement
+    .querySelector(".add-to-cart")
+    .addEventListener("click", () => addItemCallback(dish));
+  return dishElement;
+}
