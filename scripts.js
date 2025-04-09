@@ -59,6 +59,37 @@ class Cart {
     return itemsTotal + this.deliveryCost;
   }
 
+  createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
+    const containerHTML = returnSummaryTemplate();
+
+    const container = document.createElement('div');
+    container.innerHTML = containerHTML.trim();
+
+    container.querySelector('#itemsTotal').textContent = `${itemsTotal.toFixed(2)} €`;
+    container.querySelector('#deliveryCost').textContent = `${deliveryCost.toFixed(2)} €`;
+    container.querySelector('#total').textContent = `${total.toFixed(2)} €`;
+
+    const orderButton = container.querySelector('.order-button');
+    orderButton.addEventListener('click', () => {
+        if (this.items.length === 0) {
+            this.showPopup("Sie haben noch nichts bestellt");
+        } else {
+            this.showPopup("Vielen Dank für Ihre Bestellung!");
+            this.items = [];
+            this.updateCartDisplay();
+            this.updateCartCount();
+        }
+    });
+
+    return container.firstChild;
+}
+
+  updateCartCount() {
+    const cartCountElement = document.querySelector("#burger-menu .cart-count");
+    const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElement.textContent = totalItems;
+  }
+
   updateCartDisplay() {
     const cartElement = document.getElementById("cart");
     cartElement.innerHTML = "";
@@ -83,49 +114,6 @@ class Cart {
       this.calculateTotal()
     );
     cartElement.appendChild(summaryElement);
-  }
-
-  createCartSummaryTemplate(itemsTotal, deliveryCost, total) {
-    const summaryElement = document.createElement("div");
-    summaryElement.classList.add("cart-summary");
-    summaryElement.innerHTML = `
-        <p><span>Zwischensumme:</span><span>${itemsTotal.toFixed(
-          2
-        )} €</span></p>
-        <p><span>Lieferkosten:</span><span>${deliveryCost.toFixed(
-          2
-        )} €</span></p>
-        <p><span>Gesamt:</span><span>${total.toFixed(2)} €</span></p>
-    `;
-
-    const container = document.createElement("div");
-    container.classList.add("cart-summary-container");
-    container.appendChild(summaryElement);
-
-    const orderButton = document.createElement("button");
-    orderButton.textContent = "Bestellen";
-    orderButton.classList.add("order-button");
-    orderButton.addEventListener("click", () => {
-      if (this.items.length === 0) {
-        this.showPopup("Sie haben noch nichts bestellt");
-      } else {
-        this.showPopup("Vielen Dank für Ihre Bestellung!");
-        this.items = [];
-        this.updateCartDisplay();
-        this.updateCartCount();
-      }
-    });
-    container.appendChild(orderButton);
-
-    return container;
-  }
-
-  
-
-  updateCartCount() {
-    const cartCountElement = document.querySelector("#burger-menu .cart-count");
-    const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
-    cartCountElement.textContent = totalItems;
   }
 
   showPopup(message) {
@@ -197,14 +185,7 @@ function createCartItemTemplate(
 ) {
   const itemElement = document.createElement("div");
   itemElement.classList.add("cart-item");
-  itemElement.innerHTML = `
-      <span>${item.dish.name} x ${item.quantity}</span>
-      <div>
-        <button class="cart-add">+</button>
-        <button class="cart-decrease">-</button>
-        <button class="cart-remove">🗑️</button>
-      </div>
-    `;
+  itemElement.innerHTML = returnCartItemTemplate(item);
  
   itemElement
     .querySelector(".cart-add")
@@ -222,13 +203,7 @@ function createCartItemTemplate(
 function createDishTemplate(dish, addItemCallback) {
   const dishElement = document.createElement("div");
   dishElement.classList.add("dish");
-  dishElement.innerHTML = `
-      <h4>${dish.name}</h4>
-      <div class="fos"><button class="add-to-cart" data-dish-name="${
-        dish.name
-      }" data-dish-price="${dish.price}">+</button>
-      <span class="price-text">${dish.price.toFixed(2)} €</span></div>
-    `;
+  dishElement.innerHTML = returnDishTemplate(dish);
 
   dishElement
     .querySelector(".add-to-cart")
